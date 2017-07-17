@@ -7,7 +7,7 @@
 
 ** Installation
 
-   Using [[https://github.com/jwiegley/use-package][use-package]] and [[https://github.com/quelpa/quelpa-use-package][Quelpa]]:
+   Using [[https://github.com/jwiegley/use-package][use-package]] and [[https://github.com/quelpa/quelpa-use-package][quelpa-use-package]]:
 
    #+begin_src emacs-lisp
     (use-package iqa
@@ -18,6 +18,12 @@
       (setq iqa-user-init-file (concat user-emacs-directory "init.org"))
       :config
       (iqa-setup-default))
+   #+end_src
+
+   or just put /iqa.el/ to ~load-path~ and
+
+   #+begin_src emacs-lisp
+     (require 'iqa)
    #+end_src
 
 ** Info
@@ -37,5 +43,5 @@
 
    ~iqa-find-user-init-directory~ opens init file directory
 
-   ~iqa-setup-default~ binds "C-c f" to ~iqa-find-user-init-file~,
-   "C-c d" to ~iqa-find-user-init-directory~
+   ~iqa-setup-default~ binds /C-c f/ to ~iqa-find-user-init-file~,
+   /C-c d/ to ~iqa-find-user-init-directory~
