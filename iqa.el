@@ -17,8 +17,9 @@
 ;; see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
-;; Sadly, Emacs (unlike Spacemacs) doesn't have functions to open it's own init
-;; file, so thousands of users have to write their owns.  I'm not different :)
+;; Sadly, Emacs (unlike Spacemacs, which has `spacemacs/find-dotfile') doesn't have
+;; a function to open its own init file, so thousands of users have to write their owns.
+;; I'm not different :)
 ;;
 ;; `iqa-find-user-init-file' is a shorthand to open user init file.
 ;; By default `user-init-file' is used.  If your configuration is generated
@@ -62,6 +63,11 @@
   (or iqa-user-init-file user-init-file))
 
 (defun iqa-find-user-init-file ()
+  "Open user init file using iqa-find-file-function."
+  (interactive)
+  (funcall iqa-find-file-function (iqa--init-file)))
+
+(defun iqa-load-user-init-file ()
   "Open user init file using iqa-find-file-function."
   (interactive)
   (funcall iqa-find-file-function (iqa--init-file)))

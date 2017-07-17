@@ -1,8 +1,9 @@
 * Init file(and directory) Quick Access.
 
 ** Trivia
-   Sadly, Emacs (unlike Spacemacs) doesn't have functions to open it's own init
-   file, so thousands of users have to write their owns.  I'm not different :)
+   Sadly, Emacs (unlike Spacemacs, which has `spacemacs/find-dotfile') doesn't have
+   a function to open its own init file, so thousands of users have to write their owns.
+   I'm not different :)
 
 ** Installation
 
