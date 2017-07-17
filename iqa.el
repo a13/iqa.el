@@ -22,7 +22,7 @@
 ;;
 ;; `iqa-find-user-init-file' is a shorthand to open user init file.
 ;; By default `user-init-file' is used.  If your configuration is generated
-;; from org-mode source by you may want to point it to your org file.
+;; from org-mode source you may want to point it to your org file.
 ;;
 ;; (setq iqa-user-init-file (concat user-emacs-directory "init.org"))
 ;;
@@ -41,7 +41,7 @@
 ;; (use-package iqa
 ;;   :ensure nil
 ;;   :quelpa
-;;   (point-im :repo "a13/iqa.el" :fetcher github :version original)
+;;   (iqa :repo "a13/iqa.el" :fetcher github :version original)
 ;;   :init
 ;;   (setq iqa-user-init-file (concat user-emacs-directory "init.org"))
 ;;   :config
@@ -71,6 +71,7 @@
   (interactive)
   (funcall iqa-find-file-function (file-name-directory (iqa--init-file))))
 
+;;;###autoload
 (defun iqa-setup-default ()
   "Setup default shortcuts for `iqa-find-user-init-file'/`iqa-find-user-init-directory'."
   (interactive)
