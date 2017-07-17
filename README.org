@@ -1,0 +1,40 @@
+* Init file(and directory) Quick Access.
+
+** Trivia
+   Sadly, Emacs (unlike Spacemacs) doesn't have functions to open it's own init
+   file, so thousands of users have to write their owns.  I'm not different :)
+
+** Installation
+
+   Using use-package:
+
+   #+begin_src emacs-lisp
+    (use-package iqa
+      :ensure nil
+      :quelpa
+      (iqa :repo "a13/iqa.el" :fetcher github :version original)
+      :init
+      (setq iqa-user-init-file (concat user-emacs-directory "init.org"))
+      :config
+      (iqa-setup-default))
+   #+end_src
+
+** Info
+
+   ~iqa-find-user-init-file~ is a shorthand to open user init file.
+   By default ~user-init-file~ is used.  If your configuration is generated
+   from org-mode source you may want to point it to your org file.
+   #+begin_src emacs-lisp
+     (setq iqa-user-init-file (concat user-emacs-directory "init.org"))
+   #+end_src
+
+   File is opened by ~find-file~ but you can redefine it by e.g.
+
+   #+begin_src emacs-lisp
+     (setq iqa-find-file-function #'find-file-other-window)
+   #+end_src
+
+   ~iqa-find-user-init-directory~ opens init file directory
+
+   ~iqa-setup-default~ binds "C-c f" to ~iqa-find-user-init-file~,
+   "C-c d" to ~iqa-find-user-init-directory~
