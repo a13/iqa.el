@@ -1,6 +1,20 @@
 ;;; iqa.el --- Init file(and directory) Quick Access. -*- lexical-binding: t -*-
-;; Package-Requires: ((emacs "24.3"))
+
 ;; Homepage: https://github.com/a13/iqa.el
+;; Package-Requires: ((emacs "24.3"))
+
+;; This file is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation; either version 3, or (at your option)
+;; any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; For a full copy of the GNU General Public License
+;; see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 ;; Sadly, Emacs (unlike Spacemacs) doesn't have functions to open it's own init
@@ -20,6 +34,7 @@
 ;;
 ;; `iqa-setup-default' binds "C-c f" to `iqa-find-user-init-file',
 ;; "C-c d" to `iqa-find-user-init-directory'
+;;
 ;;
 ;; Installation with `quelpa-use-package':
 ;;
