@@ -10,14 +10,15 @@
    Using [[https://github.com/jwiegley/use-package][use-package]] and [[https://github.com/quelpa/quelpa-use-package][quelpa-use-package]]:
 
    #+begin_src emacs-lisp
-    (use-package iqa
-      :ensure nil
-      :quelpa
-      (iqa :repo "a13/iqa.el" :fetcher github :version original)
-      :init
-      (setq iqa-user-init-file (concat user-emacs-directory "init.org"))
-      :config
-      (iqa-setup-default))
+     (use-package iqa
+       :ensure nil
+       :quelpa
+       (iqa :repo "a13/iqa.el" :fetcher github :version original)
+       ;; for generated files only
+       ;; :init
+       ;; (setq iqa-user-init-file (concat user-emacs-directory "init.org"))
+       :config
+       (iqa-setup-default))
    #+end_src
 
    or just put /iqa.el/ to ~load-path~ and

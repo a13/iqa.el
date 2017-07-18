@@ -48,8 +48,9 @@
 ;;   :ensure nil
 ;;   :quelpa
 ;;   (iqa :repo "a13/iqa.el" :fetcher github :version original)
-;;   :init
-;;   (setq iqa-user-init-file (concat user-emacs-directory "init.org"))
+;;   ;; for generated files only
+;;   ;; :init
+;;   ;; (setq iqa-user-init-file (concat user-emacs-directory "init.org"))
 ;;   :config
 ;;   (iqa-setup-default))
 
