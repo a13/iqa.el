@@ -69,7 +69,7 @@
   (or iqa-user-init-file user-init-file))
 
 (defun iqa-find-user-init-file ()
-  "Open user init file using iqa-find-file-function."
+  "Open user init file using `iqa-find-file-function'."
   (interactive)
   (funcall iqa-find-file-function (iqa--init-file)))
 
