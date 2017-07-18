@@ -1,6 +1,7 @@
 ;;; iqa.el --- Init file(and directory) Quick Access. -*- lexical-binding: t -*-
 
 ;; Homepage: https://github.com/a13/iqa.el
+;; Version: 0.0.1
 ;; Package-Requires: ((emacs "24.3"))
 
 ;; This file is free software; you can redistribute it and/or modify
