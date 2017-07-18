@@ -41,7 +41,17 @@
      (setq iqa-find-file-function #'find-file-other-window)
    #+end_src
 
+   ~iqa-reload-user-init-file~ reloads ~user-init-file~ (not ~iqa-user-init-file~)
+
+   For a full restart take a look at [[https://github.com/iqbalansari/restart-emacs][restart-emacs]] package.
+
    ~iqa-find-user-init-directory~ opens init file directory
 
-   ~iqa-setup-default~ binds /C-c f/ to ~iqa-find-user-init-file~,
-   /C-c d/ to ~iqa-find-user-init-directory~
+
+   ~iqa-setup-default~ defines keybindings:
+
+   /C-x M-f/ — ~iqa-find-user-init-file~
+
+   /C-x M-r/ — ~iqa-reload-user-init-file~
+
+   /C-c M-d/ — ~iqa-find-user-init-directory~

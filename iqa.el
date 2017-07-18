@@ -31,10 +31,15 @@
 ;;
 ;; (setq iqa-find-file-function #'find-file-other-window)
 ;;
+;; `iqa-reload-user-init-file' reloads `user-init-file' (not `iqa-user-init-file')
+;; For a full restart take a look at `restart-emacs' package.
+;;
 ;; `iqa-find-user-init-directory' opens init file directory
 ;;
-;; `iqa-setup-default' binds "C-c f" to `iqa-find-user-init-file',
-;; "C-c d" to `iqa-find-user-init-directory'
+;; `iqa-setup-default' defines keybindings:
+;; "C-x M-f" — `iqa-find-user-init-file'
+;; "C-x M-r" — `iqa-reload-user-init-file'
+;; "C-c M-d" — `iqa-find-user-init-directory'
 ;;
 ;;
 ;; Installation with `quelpa-use-package':
@@ -67,10 +72,20 @@
   (interactive)
   (funcall iqa-find-file-function (iqa--init-file)))
 
-(defun iqa-load-user-init-file ()
-  "Open user init file using iqa-find-file-function."
-  (interactive)
-  (funcall iqa-find-file-function (iqa--init-file)))
+(defun iqa-reload-user-init-file (save-all)
+  "Load user init file.  Call `save-some-buffers' if prefix SAVE-ALL is set.
+Ask for saving only `user-init-file' otherwise."
+  (interactive "P")
+  (let* ((init-file (iqa--init-file))
+         (init-file-buffer (get-file-buffer init-file)))
+    (if save-all
+        (save-some-buffers)
+      (when (and init-file-buffer
+                 (buffer-modified-p init-file-buffer)
+                 (y-or-n-p (format "Save file %s? " init-file)))
+        (with-current-buffer init-file-buffer
+          (save-buffer)))))
+  (load-file user-init-file))
 
 (defun iqa-find-user-init-directory ()
   "Open a directory containing `iqa-user-init-file' or `user-init-file'."
@@ -79,10 +94,11 @@
 
 ;;;###autoload
 (defun iqa-setup-default ()
-  "Setup default shortcuts for `iqa-find-user-init-file'/`iqa-find-user-init-directory'."
+  "Setup default shortcuts for iqa."
   (interactive)
-  (define-key global-map (kbd "C-c f") #'iqa-find-user-init-file)
-  (define-key global-map (kbd "C-c d") #'iqa-find-user-init-directory))
+  (define-key ctl-x-map "\M-f" #'iqa-find-user-init-file)
+  (define-key ctl-x-map "\M-r" #'iqa-reload-user-init-file)
+  (define-key ctl-x-map "\M-d" #'iqa-find-user-init-directory))
 
 (provide 'iqa)
 
