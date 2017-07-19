@@ -57,13 +57,21 @@
 
 ;;; Code:
 
-(defvar iqa-user-init-file
-  nil
-  "Default init file to open instead of `user-init-file'.")
+(defgroup iqa nil
+  "Init file quick access."
+  :group 'startup)
 
-(defvar iqa-find-file-function
+(defcustom iqa-user-init-file
+  nil
+  "Default init file to open instead of `user-init-file'."
+  :group 'iqa
+  :type 'file)
+
+(defcustom iqa-find-file-function
   #'find-file
-  "Find file function.  Should take one required FILENAME argument.")
+  "Find file function.  Should take one required FILENAME argument."
+  :group 'iqa
+  :type 'function)
 
 (defun iqa--init-file ()
   "Return init file name."
