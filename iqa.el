@@ -69,11 +69,13 @@
   "Return init file name."
   (or iqa-user-init-file user-init-file))
 
+;;;###autoload
 (defun iqa-find-user-init-file ()
   "Open user init file using `iqa-find-file-function'."
   (interactive)
   (funcall iqa-find-file-function (iqa--init-file)))
 
+;;;###autoload
 (defun iqa-reload-user-init-file (save-all)
   "Load user init file.  Call `save-some-buffers' if prefix SAVE-ALL is set.
 Ask for saving only `user-init-file' otherwise."
@@ -89,8 +91,9 @@ Ask for saving only `user-init-file' otherwise."
           (save-buffer)))))
   (load-file user-init-file))
 
+;;;###autoload
 (defun iqa-find-user-init-directory ()
-  "Open a directory containing `iqa-user-init-file' or `user-init-file'."
+  "Open user init file directory using `iqa-find-file-function'."
   (interactive)
   (funcall iqa-find-file-function (file-name-directory (iqa--init-file))))
 
