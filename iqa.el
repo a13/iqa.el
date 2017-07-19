@@ -88,10 +88,10 @@
   "Load user init file.  Call `save-some-buffers' if prefix SAVE-ALL is set.
 Ask for saving only `user-init-file' otherwise."
   (interactive "P")
-  (let* ((init-file (iqa--init-file))
-         (init-file-buffer (get-file-buffer init-file)))
-    (if save-all
-        (save-some-buffers)
+  (if save-all
+      (save-some-buffers)
+    (let* ((init-file (iqa--init-file))
+           (init-file-buffer (get-file-buffer init-file)))
       (when (and init-file-buffer
                  (buffer-modified-p init-file-buffer)
                  (y-or-n-p (format "Save file %s? " init-file)))
