@@ -40,7 +40,7 @@
 ;; `iqa-setup-default' defines keybindings:
 ;; "C-x M-f" — `iqa-find-user-init-file'
 ;; "C-x M-r" — `iqa-reload-user-init-file'
-;; "C-c M-d" — `iqa-find-user-init-directory'
+;; "C-x M-d" — `iqa-find-user-init-directory'
 ;;
 ;;
 ;; Installation with `quelpa-use-package':

@@ -55,4 +55,4 @@
 
    /C-x M-r/ — ~iqa-reload-user-init-file~
 
-   /C-c M-d/ — ~iqa-find-user-init-directory~
+   /C-x M-d/ — ~iqa-find-user-init-directory~
