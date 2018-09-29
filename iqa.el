@@ -82,6 +82,12 @@
   (funcall iqa-find-file-function (iqa--init-file)))
 
 ;;;###autoload
+(defun iqa-find-user-custom-file ()
+  "Open user custom file directory using `iqa-find-file-function'."
+  (interactive)
+  (funcall iqa-find-file-function custom-file))
+
+;;;###autoload
 (defun iqa-reload-user-init-file (save-all)
   "Load user init file.  Call `save-some-buffers' if prefix SAVE-ALL is set.
 Ask for saving only `user-init-file' otherwise."
@@ -108,6 +114,7 @@ Ask for saving only `user-init-file' otherwise."
   "Setup default shortcuts for iqa."
   (interactive)
   (define-key ctl-x-map "\M-f" #'iqa-find-user-init-file)
+  (define-key ctl-x-map "\M-c" #'iqa-find-user-custom-file)
   (define-key ctl-x-map "\M-r" #'iqa-reload-user-init-file)
   (define-key ctl-x-map "\M-d" #'iqa-find-user-init-directory))
 
