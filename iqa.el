@@ -85,7 +85,7 @@
 (defun iqa-find-user-custom-file ()
   "Open user custom file directory using `iqa-find-file-function'."
   (interactive)
-  (funcall iqa-find-file-function custom-file))
+  (funcall iqa-find-file-function (custom-file)))
 
 ;;;###autoload
 (defun iqa-reload-user-init-file (save-all)
