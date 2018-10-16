@@ -35,6 +35,8 @@
 ;; `iqa-reload-user-init-file' reloads `user-init-file' (not `iqa-user-init-file')
 ;; For a full restart take a look at `restart-emacs' package.
 ;;
+;; `iqa-find-user-custom-file' opens custom-file
+;;
 ;; `iqa-find-user-init-directory' opens init file directory
 ;;
 ;; `iqa-setup-default' defines keybindings:
@@ -85,14 +87,14 @@
 
 ;;;###autoload
 (defun iqa-find-user-custom-file ()
-  "Open user custom file directory using `iqa-find-file-function'."
+  "Open user custom file using `iqa-find-file-function'."
   (interactive)
   (funcall iqa-find-file-function (custom-file)))
 
 ;;;###autoload
 (defun iqa-reload-user-init-file (save-all)
-  "Load user init file.  Call `save-some-buffers' if prefix SAVE-ALL is set.
-Ask for saving only `user-init-file' otherwise."
+  "Load user init file.  Call `save-some-buffers' if the prefix SAVE-ALL is set.
+Ask for saving only `iqa--init-file' otherwise."
   (interactive "P")
   (if save-all
       (save-some-buffers)
