@@ -123,6 +123,15 @@ Ask for saving only `iqa--init-file' otherwise."
   (define-key ctl-x-map "\M-r" #'iqa-reload-user-init-file)
   (define-key ctl-x-map "\M-d" #'iqa-find-user-init-directory))
 
+;;;###autoload
+(defun iqa-add-bookmarks ()
+  "add bookmarks for user init files and directories."
+  (interactive)
+  (bookmark-store "Emacs custom file" `((filename . ,(custom-file))) nil)
+  (bookmark-store "Emacs init directory" `((filename . ,user-emacs-directory)) nil)
+  (bookmark-store "Emacs init file" `((filename . ,(iqa--init-file))) nil))
+
+
 (provide 'iqa)
 
 ;;; iqa.el ends here

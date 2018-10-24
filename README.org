@@ -17,6 +17,7 @@
        ;; :custom
        ;; (iqa-user-init-file (concat user-emacs-directory "README.org") "Edit README.org by default.")
        :config
+       ;; (iqa-add-bookmarks) — if you prefer bookmarks
        (iqa-setup-default))
    #+end_src
 
@@ -57,3 +58,7 @@
    /C-x M-r/ — ~iqa-reload-user-init-file~
 
    /C-x M-d/ — ~iqa-find-user-init-directory~
+
+
+   If you don't like these, or prefer to use Emacs bookmarks instead, ~iqa-add-bookmarks~
+   adds bookmarks to these files.
