@@ -1,4 +1,4 @@
-;;; iqa.el --- Init file(and directory) Quick Access. -*- lexical-binding: t -*-
+;;; iqa.el --- Init file(and directory) Quick Access -*- lexical-binding: t -*-
 
 ;; Homepage: https://github.com/a13/iqa.el
 ;; Version: 0.0.1
@@ -15,7 +15,7 @@
 ;; GNU General Public License for more details.
 
 ;; For a full copy of the GNU General Public License
-;; see <http://www.gnu.org/licenses/>.
+;; see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 ;; Sadly, Emacs (unlike Spacemacs, which has `spacemacs/find-dotfile') doesn't have
@@ -49,7 +49,7 @@
 ;; Installation:
 ;;
 ;; (use-package iqa
-;;   ;; use this if your config is generated from org file
+;;   ;; use this if your config is generated from an org file
 ;;   ;; :custom
 ;;   ;; (iqa-user-init-file (concat user-emacs-directory "README.org") "Edit README.org by default.")
 ;;   :config
@@ -58,6 +58,7 @@
 ;;; Code:
 
 (require 'cus-edit)
+(require 'bookmark)
 
 (defgroup iqa nil
   "Init file quick access."
@@ -123,9 +124,10 @@ Ask for saving only `iqa--init-file' otherwise."
   (define-key ctl-x-map "\M-r" #'iqa-reload-user-init-file)
   (define-key ctl-x-map "\M-d" #'iqa-find-user-init-directory))
 
+
 ;;;###autoload
 (defun iqa-add-bookmarks ()
-  "add bookmarks for user init files and directories."
+  "Add bookmarks for user init files and directories."
   (interactive)
   (bookmark-store "Emacs custom file" `((filename . ,(custom-file))) nil)
   (bookmark-store "Emacs init directory" `((filename . ,user-emacs-directory)) nil)
