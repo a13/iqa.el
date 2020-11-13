@@ -133,7 +133,6 @@ Ask for saving only `iqa--init-file' otherwise."
   (bookmark-store "Emacs init directory" `((filename . ,user-emacs-directory)) nil)
   (bookmark-store "Emacs init file" `((filename . ,(iqa--init-file))) nil))
 
-
 (provide 'iqa)
 
 ;;; iqa.el ends here
