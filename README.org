@@ -16,15 +16,23 @@
        ;; use this if your config is generated from org file
        ;; :custom
        ;; (iqa-user-init-file (concat user-emacs-directory "README.org") "Edit README.org by default.")
-       :config
-       ;; (iqa-add-bookmarks) — if you prefer bookmarks
-       (iqa-setup-default))
+       ;; bind iqa functions to shortcuts
+       :bind (:map ctl-x-map
+                   ("M-f" . iqa-find-user-init-file)
+                   ("M-c" . iqa-find-user-custom-file)
+                   ("M-r" . iqa-reload-user-init-file)
+                   ("M-d" . iqa-find-user-init-directory))
+       ;; :config
+       ;; (iqa-add-bookmarks) — to add bookmarks to emacs init files
+       ;; (iqa-setup-default) - to bind default bindings
+       )
    #+end_src
 
    or just put /iqa.el/ to ~load-path~ and
 
    #+begin_src emacs-lisp
      (require 'iqa)
+     (iqa-setup-default)
    #+end_src
 
 ** Info
